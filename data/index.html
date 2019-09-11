@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{.Name}}</title>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-wrapper cyan lighten-2" style="padding-left: 10px;">
+      <div class="col s12">
+        {{range $el := .Nav}}
+        <a href="{{$el.Link}}" class="breadcrumb">
+          {{$el.Name}}
+        </a>
+        {{end}}
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <ul class="collection">
+      <ul>
+        {{range $node := .Contents}}
+        {{if $node.Info.IsDir}}
+        <a href='{{$node.Link}}'>
+          {{else}}
+          <a download="{{$node.Info.Name}}" href='{{$node.DownloadLink}}'>
+            {{end}}
+            <li class="collection-item avatar">
+              <i class="material-icons circle 
+              {{if $node.Info.IsDir }} 
+              green lighten-2 
+              {{else}} 
+              cyan lighten-2 
+              {{end}}">
+                {{if $node.Info.IsDir}}
+                folder
+                {{else}}
+                insert_drive_file
+                {{end}}
+              </i>
+              <span class="title">{{$node.Info.Name}}</span>
+              {{if $node.Info.IsDir}}
+              {{if ne $node.DirSize -1}}
+              <p>{{getFormattedSize $node.DirSize}}</p>
+              {{else}}
+              <p class="red-text text-darken-4">Empty Folder</p>
+              {{end}}
+              {{else}}
+              <p>{{getFormattedSize $node.Info.Size}}</p>
+              {{end}}
+              <p class="grey-text text-lighten-1">{{$node.FDate}}</p>
+              <a download="{{$node.Info.Name}}" href="{{$node.DownloadLink}}" class="secondary-content"><i
+                  class="material-icons">cloud_download</i></a>
+            </li>
+          </a>
+          {{end}}
+      </ul>
+    </ul>
+  </div>
+</body>
+
+</html>

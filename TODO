@@ -1,0 +1,14 @@
+Improve Interface:
+    ✔ Show formatted date @done(19-09-10 11:37)
+    ✔ Make mobile friendly @done(19-09-10 20:43)
+    ✔ Get Size of Entire Subdirectory @done(19-09-10 20:14)
+    ✔ Better differentiate between files and folders (not easily visible at a quick glance) @done(19-09-10 20:43)
+    - Show loading indicator until file is finished being zipped
+    
+
+✔ Bundle template with binary @done(19-09-10 20:43)
+✔ Show local IP address @done(19-09-10 11:52)
+✔ Command line args @done(19-09-10 20:43)
+  ✔ Home dir or relative to exec path @done(19-09-10 15:28)
+  ✔ Port @done(19-09-10 11:52)
+  ✔ Enable or disable visibility of dotfiles @done(19-09-10 21:11)
