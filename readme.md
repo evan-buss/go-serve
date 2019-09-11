@@ -19,3 +19,6 @@ Usage of ./file_server:
         Sets the base file server directory to the root '/' directory. Use with caution.
 ```
 
+## Screenshot
+
+<img src="https://raw.githubusercontent.com/evan-buss/go-serve/master/screenshot/screenshot.png" alt="screenshot"/>
