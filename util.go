@@ -21,7 +21,7 @@ func findIP() string {
 	ip := conn.LocalAddr().String()
 	ip = ip[:strings.IndexRune(ip, ':')+1]
 
-	return ip + *port
+	return "http://" + ip + *port
 }
 
 // generateNav generates a NavContent array for use in the page header
