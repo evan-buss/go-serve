@@ -8,7 +8,7 @@ I found Python's quick local network file server to be useful for transferring f
 
 ## Usage
 ```
-Usage of ./file_server:
+Usage of go-serve:
   -home
         Sets the base file server directory to your home directory
   -port string
@@ -22,3 +22,13 @@ Usage of ./file_server:
 ## Screenshot
 
 <img src="https://raw.githubusercontent.com/evan-buss/go-serve/master/screenshot/screenshot.png" alt="screenshot"/>
+
+## Development
+
+In order to package go-serve as a single executable, it makes use of the go-bindata utility. 
+This transforms the HTML template into a plain `*.go` file. If you make changes to the HTML template, 
+you must recompile it.
+
+1. `go get -u github.com/go-bindata/go-bindata/...`
+2. Run `go-bindata data/`
+3. `bindata.go` is generated.
