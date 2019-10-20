@@ -6,6 +6,10 @@ Quickly download files and folders from computers on the local network
 
 I found Python's quick local network file server to be useful for transferring files in a pinch. The only problem is you cannot download folders. GoServe quickly zips folders before sending them. It also looks a bit nicer than the default Python file server.
 
+## Installation
+
+`go get github.com/evan-buss/go-serve`
+
 ## Usage
 ```
 Usage of go-serve:
