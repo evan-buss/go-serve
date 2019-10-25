@@ -60,8 +60,15 @@
               <p>{{getFormattedSize $node.Info.Size}}</p>
               {{end}}
               <p class="grey-text text-lighten-1">{{$node.FDate}}</p>
-              <a download="{{$node.Info.Name}}.zip" href="{{$node.DownloadLink}}" class="secondary-content"><i
-                  class="material-icons">cloud_download</i></a>
+              {{if $node.Info.IsDir}}
+              <a download="{{$node.Info.Name}}.zip" href="{{$node.DownloadLink}}" class="secondary-content">
+                <i class="material-icons">cloud_download</i>
+              </a>
+              {{else}}
+              <a download="{{$node.Info.Name}}" href="{{$node.DownloadLink}}" class="secondary-content">
+                <i class="material-icons">cloud_download</i>
+              </a>
+              {{end}}
             </li>
           </a>
           {{end}}

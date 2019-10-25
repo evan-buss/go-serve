@@ -25,7 +25,7 @@ Usage of go-serve:
 
 ## Screenshot
 
-<img src="https://raw.githubusercontent.com/evan-buss/go-serve/master/screenshot/screenshot.png" alt="screenshot"/>
+<img src="https://raw.githubusercontent.com/evan-buss/go-serve/master/.github/screenshot.png" alt="screenshot"/>
 
 ## Development
 
